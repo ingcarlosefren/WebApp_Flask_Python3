@@ -1,14 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{data.Titulo}}</title>
-</head>
-<body>
-    <h1>Fundamentos de flask</h1>
-    <h3>Uso del framework flask en python</h3>
-    <p>{{data.Bienvenida}}</p>
-</body>
-</html>
+{% extends './layout.html'%}
+
+{% block title %}{{data.Titulo}}{% endblock %}
+
+{% block header %} <center>Hola soy header</center>  {% endblock %}
+
+{% block body %}
+<h1>Fundamentos de flask</h1>
+<h3>Uso del framework flask en python</h3>
+<p>{{data.Bienvenida}}</p>
+<p>{{data.Nombre}}</p>
+
+<ul>
+    {%for c in data.Datos %}
+    <li>{{c}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block footer %} <center>soy footer</center>{% endblock %}
