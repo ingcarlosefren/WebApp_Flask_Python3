@@ -5,17 +5,8 @@ Un ejemplo de construcción de una webapp utilizando python3, flask, virtualenv 
 
 
 ### Crear entorno virtual
-1. Crea un directorio en una consola Linux `mkdir ejemploDir`
-2. Acceder al directorio `cd ejemploDir`
-3. Crear entorno virtual `python3 -m venv .venv` | alternativamente se puede usar tambien `virtualenv -p python3 .venv`.
-4. Clonar este repositorio `pip install flask`
-Este es un ejemplo de texto que da entrada a una lista genérica de elementos:
-- Elemento 1
-- Elemento 2
-- Elemento 3
-Este es un ejemplo de texto que da entrada a una lista numerada:
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
-Al texto en Markdown puedes añadirle formato como **negrita** o *cursiva* de una manera muy sencilla.
+1. Copie este repositorio `git clone https://github.com/ingcarlosefren/WebApp_Flask_Python3.git`
+2. Acceder al directorio `cd WebApp_Flask_Python3`
+3. Contruye la imagen `docker build -t my-flask-web-app-docker:v0.01 .` 
+
 
