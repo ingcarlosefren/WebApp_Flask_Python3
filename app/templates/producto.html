@@ -1,0 +1,12 @@
+{% extends './layout.html'%}
+
+{% block title %}{{data.Titulo}}{% endblock %}
+
+{% block header %} <center>Hola soy header</center> {% endblock %}
+
+{% block body %}
+<h1>sku: {{data.sku}}</h1>
+<p>modelo: {{data.modelo}}</p>
+{% endblock %}
+
+{% block footer %} <center>soy footer</center>{% endblock %}

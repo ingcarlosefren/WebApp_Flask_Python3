@@ -2,19 +2,22 @@
 
 {% block title %}{{data.Titulo}}{% endblock %}
 
-{% block header %} <center>Hola soy header</center>  {% endblock %}
+{% block header %} <center>Hola soy header</center> {% endblock %}
 
 {% block body %}
 <h1>Fundamentos de flask</h1>
 <h3>Uso del framework flask en python</h3>
 <p>{{data.Bienvenida}}</p>
-<p>{{data.Nombre}}</p>
-
-<ul>
-    {%for c in data.Datos %}
-    <li>{{c}}</li>
-    {% endfor %}
-</ul>
+    {% if data.numDatos > 0 %}
+        <p>{{data.Nombre}}</p>
+        <ul>
+            {%for c in data.Datos %}
+            <li>{{c}}</li>
+            {% endfor %}
+        </ul>
+    {%else%}
+        <h2>No existen datos ...</h2>
+    {% endif %}
 {% endblock %}
 
 {% block footer %} <center>soy footer</center>{% endblock %}
