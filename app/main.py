@@ -1,5 +1,5 @@
 from distutils.log import debug
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app=Flask(__name__)
 
@@ -27,6 +27,16 @@ def producto(sku, modelo):
     }
     return render_template('producto.html', data=producto)
 
+def query_string():
+    print(request.args)
+    print(request.args.get('param1'))
+    print(request.args.get('param2'))
+    return "ok"
+
+def pagina_no_encontrada(error):
+    return render_template('404.html'), 404
 
 if __name__=='__main__':
+    app.add_url_rule('/query_string', view_func=query_string)
+    app.register_error_handler(404, pagina_no_encontrada)
     app.run(debug=True, port=5000, host= "0.0.0.0")
