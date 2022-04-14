@@ -35,6 +35,11 @@ def query_string():
 
 def pagina_no_encontrada(error):
     return render_template('404.html'), 404
+    
+@app.route('/base')
+def base():
+    return render_template('base.html')
+
 
 if __name__=='__main__':
     app.add_url_rule('/query_string', view_func=query_string)
